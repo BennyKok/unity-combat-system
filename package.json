@@ -1,0 +1,13 @@
+{
+  "name": "com.bennykok.combat-system",
+  "displayName": "Combat System",
+  "version": "1.0.0",
+  "description": "Timeline based combat system",
+  "dependencies": {
+    "com.unity.settings-manager": "1.0.3"
+  },
+  "author": {
+        "name": "BennyKok",
+        "url": "https://github.com/BennyKok"
+   }
+}
