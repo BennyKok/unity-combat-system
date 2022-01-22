@@ -162,7 +162,8 @@ namespace BennyKok.CombatSystem
             }
             if (imageFill)
             {
-                imageFill.fillAmount = hp / fullHp;
+                var fill = Mathf.Lerp(imageFill.fillAmount, hp / fullHp, 10 * Time.unscaledDeltaTime);
+                imageFill.fillAmount = fill;
             }
             if (imageSecondaryFill && (Time.unscaledTime - lastDamageTime) > 0.5f)
             {
@@ -186,6 +187,12 @@ namespace BennyKok.CombatSystem
         {
             hp += pt;
             if (clampHealth) hp = Mathf.Clamp(hp, 0, fullHp);
+            onAddHealthEvent.Invoke();
+        }
+
+        public void ResetHealth()
+        {
+            hp = fullHp;
             onAddHealthEvent.Invoke();
         }
 
